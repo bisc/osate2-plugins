@@ -84,7 +84,9 @@
                class="org.osate.analysis.resource.management.actions.Binpack"
                menubarPath="menu.analyses/menu.rsrc/stuff.grp"
                toolbarPath="rsrc.toolbar"
-               enablesFor="1">
+               enablesFor="1"
+               definitionId="org.osate.analysis.resource.management.commands.Binpack"> 
+               <!-- definitionId has to match the command name for the action to be executed -->
             <enablement>
                <or>
                   <and>
@@ -188,5 +190,25 @@
          point="org.eclipse.core.resources.markers">
       <super type="org.osate.aadl2.modelsupport.AadlObjectMarker"/>
       <persistent value="true"/>
+   </extension>
+   
+   <!-- For integration with contracts: used to run an action -->
+   <extension
+         id="binpack.command"
+         name="binpackcommand"
+         point="org.eclipse.ui.commands">
+   
+       <category
+          description="Actions take at lunch time."
+          id="org.osate.analysis.resource.management.commands"
+          name="Lunch">
+       </category>
+   
+         <command
+            categoryId="org.osate.analysis.resource.management.commands"
+            id="org.osate.analysis.resource.management.commands.Binpack"
+            description="asdasdasd"
+            name="mybinpackcommand">
+      </command>
    </extension>
 </plugin>
